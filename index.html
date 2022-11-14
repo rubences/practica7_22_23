@@ -46,7 +46,7 @@
 
         const postAPI = async (peliculas) => {
             try {
-                const res = await fetch("https://myjson.dit.upm.es/api/bins", {
+                const res = await fetch("https://jsonstorage.net/v1/json?apiKey=2ca9f78a-3253-4146-a3b2-d327b6fb769b", {
                   method: 'POST', 
                   headers:{
                       "Content-Type": "application/json",
@@ -62,7 +62,7 @@
         const getAPI = async () => {
             // Completar: Llamar a la API para leer la información guardada en myjson a través de la API
             try {
-                const res = await fetch("https://myjson.dit.upm.es/api/bins/1b0q4c");
+                const res = await fetch("https://api.jsonstorage.net/v1/json/650cd385-824a-4ff2-acd8-66c9d52f56ad/66d126e1-c4d5-49b8-9b19-f8fd10584074");
                 const data = await res.json();
                 return data;
             } catch (err) {
@@ -74,7 +74,7 @@
         const updateAPI = async (peliculas) => {
             // Completar: Actualizar la información a través de la API
             try {
-                const res = await fetch("https://myjson.dit.upm.es/api/bins/1b0q4c", {
+                const res = await fetch("https://api.jsonstorage.net/v1/json/650cd385-824a-4ff2-acd8-66c9d52f56ad/66d126e1-c4d5-49b8-9b19-f8fd10584074?apiKey=2ca9f78a-3253-4146-a3b2-d327b6fb769b", {
                   method: 'PUT', 
                   headers:{
                       "Content-Type": "application/json",
@@ -282,7 +282,7 @@
             // Completar:  controlador que reinicia el modelo guardado en myjson con las películas originales
             localStorage.URL = await postAPI(mis_peliculas_iniciales);
             indexContr();
-            
+
         }
 
         // ROUTER de eventos
