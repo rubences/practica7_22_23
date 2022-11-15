@@ -45,7 +45,19 @@
         let mis_peliculas = [];
 
         const postAPI = async (peliculas) => {
-            try {
+            //Crea un almacén nuevo para nuestra aplicación. Devuelve la URL que debemos utilizar como endpoint para guardar la información de nuestra aplicación
+         /*   const response = await fetch('https://jsonstorage.net/v1/json?apiKey=2ca9f78a-3253-4146-a3b2-d327b6fb769b', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',  
+                     //Aquí debemos poner la clave secreta que nos proporciona el servicio
+                },
+                body: JSON.stringify(peliculas) // body data type must match "Content-Type" header
+            });
+            return response.json();
+        }*/
+
+           try {
                 const res = await fetch("https://jsonstorage.net/v1/json?apiKey=2ca9f78a-3253-4146-a3b2-d327b6fb769b", {
                   method: 'POST', 
                   headers:{
